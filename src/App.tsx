@@ -1,35 +1,44 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
-function App() {
-  const [count, setCount] = useState(0)
-
+import { BadgeCheck, Ban, Bell, CircleAlert } from "lucide-react";
+import "./App.css";
+import Alert from "./components/ui/Alert/Alert";
+const App = () => {
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div style={{ margin: "2rem" }}>
+      <Alert
+        type="default-alert"
+        icon={<Bell className="icon" />}
+        title="Upgrade your plan"
+      >
+        <p>ahmed</p>
+      </Alert>
+      <Alert
+        type="info-alert"
+        icon={<CircleAlert className="icon" />}
+        title="Note"
+        description="
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ut corrupti
+      libero fugit laboriosam consequatur beatae ratione animi ullam unde?"
+      />
+      <Alert
+        type="success-alert"
+        icon={<BadgeCheck className="icon" />}
+        title="Your settings has been changed successfully"
+        description=""
+      />
+      <Alert
+        type="error-alert"
+        icon={<Ban className="icon" />}
+        title="Something went wrong"
+        description=""
+      />
+      <Alert
+        type="warning-alert"
+        icon={<Ban className="icon" />}
+        title="Tips & Tricks"
+        description=""
+      />
+    </div>
+  );
+};
 
-export default App
+export default App;
